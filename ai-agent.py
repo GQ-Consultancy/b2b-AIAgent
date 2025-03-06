@@ -57,7 +57,7 @@ def process_question(question):
 st.title("💬 Support Chat Assistant")
 
 # Get webhook URL from environment variable, with fallback for local testing
-webhook_url = st.secrets["WEBHOOK_URL"]
+webhook_url = "https://hook.us2.make.com/ffwwp947qa83gkak0i3aidx8z34o7szy"
 
 if 'webhook_url' not in st.session_state:
     st.session_state.webhook_url = webhook_url
