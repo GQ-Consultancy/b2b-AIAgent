@@ -2,10 +2,10 @@ import streamlit as st
 import requests
 import json
 import os
-from dotenv import load_dotenv
+#from dotenv import load_dotenv
 
 # Load environment variables from .env file
-load_dotenv()
+#load_dotenv()
 
 st.set_page_config(page_title="Support Chat Assistant", page_icon="💬", layout="centered")
 
@@ -57,7 +57,7 @@ def process_question(question):
 st.title("💬 Support Chat Assistant")
 
 # Get webhook URL from environment variable, with fallback for local testing
-webhook_url = os.getenv("WEBHOOK_URL", "")
+webhook_url = st.secrets["WEBHOOK_URL"]
 
 if 'webhook_url' not in st.session_state:
     st.session_state.webhook_url = webhook_url
